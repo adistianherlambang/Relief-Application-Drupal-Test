@@ -1,0 +1,8 @@
+<?php
+
+function mytheme_preprocess_node(&$variables) {
+  if ($variables['node']->getType() == 'article') {
+    $variables['theme_hook_suggestions'][] = 'node__article';
+    $variables['theme_hook_suggestions'][] = 'node__article_page';
+  } 
+}

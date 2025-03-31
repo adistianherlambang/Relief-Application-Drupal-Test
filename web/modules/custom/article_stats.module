@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\Core\Block\BlockBase;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_help().
+ */
+function article_stats_help($route_name, $route_match) {
+  switch ($route_name) {
+    case 'help.page.article_stats':
+      return '<p>' . t('Article Stats module displays the number of articles authored by the user.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function article_stats_block_info() {
+  return [
+    'article_stats_block' => [
+      'info' => t('User Article Count'),
+    ],
+  ];
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function article_stats_block_view($delta = '') {
+  if ($delta == 'article_stats_block') {
+    $user = \Drupal::currentUser();
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'article')
+      ->condition('uid', $user->id());
+    $count = $query->count()->execute();
+
+    return [
+      '#markup' => t('You have authored @count articles.', ['@count' => $count]),
+    ];
+  }
+}

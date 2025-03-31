@@ -1,0 +1,26 @@
+<article class="article-detail">
+  {% if content.field_image %}
+    <img class="article-image" src="{{ file_url(content.field_image[0]['#file'].uri) }}" alt="{{ label }}">
+  {% endif %}
+
+  <h1 class="article-title">{{ label }}</h1>
+
+  {% if content.field_author %}
+    <p class="article-meta"><strong>Author:</strong> {{ content.field_author.0.entity.label }}</p>
+  {% endif %}
+
+  {% if content.body %}
+    <div class="article-body">
+      {{ content.body.0.value|raw }}
+    </div>
+  {% endif %}
+
+  {% if content.field_tags %}
+    <div class="article-tags">
+      <strong>Tags:</strong>
+      {% for tag in content.field_tags %}
+        <span class="tag">{{ tag['#title'] }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>

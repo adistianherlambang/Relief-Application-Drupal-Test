@@ -1,0 +1,31 @@
+<a href="{{ url }}" class="article-card-link">
+  <article class="article-card">
+    {% if content.field_image and content.field_image[0]['#file'] is defined %}
+      <p>Gambar path: {{ file_url(content.field_image[0]['#file'].uri) }}</p>
+      <img class="article-image" src="{{ file_url(content.field_image[0]['#file'].uri) }}" alt="{{ label }}">
+    {% endif %}
+    
+    <h2 class="article-title">{{ label }}</h2>
+
+    {% if content.body %}
+      <div class="article-body">
+        {{ content.body.0.summary|default(content.body.0.value)|raw }}
+      </div>
+    {% endif %}
+
+    {% if content.field_tags %}
+      <div class="article-tags">
+        <strong>Tags:</strong>
+        {% for tag in content.field_tags %}
+          <span class="tag">{{ tag['#title'] }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if content.field_author %}
+      <div class="article-author">
+        <strong>Author:</strong> {{ content.field_author.0.entity.label }}
+      </div>
+    {% endif %}
+  </article>
+</a>

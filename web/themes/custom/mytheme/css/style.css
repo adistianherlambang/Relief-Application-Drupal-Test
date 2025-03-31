@@ -1,0 +1,52 @@
+html {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    background-color: white;
+}
+
+.site-header {
+    background-color: #909090; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    padding-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.article-card-link {
+    background-color: white;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    scale: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.article-card-link:hover {
+    scale: 1.02;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.article-card {
+    cursor: pointer;
+}
+
+.article-detail {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

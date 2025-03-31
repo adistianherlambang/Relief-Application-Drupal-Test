@@ -1,0 +1,8 @@
+name: 'Article Stats'
+type: module
+description: 'Module to display total articles authored by the user.'
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - drupal:user
+  - drupal:node

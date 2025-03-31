@@ -1,0 +1,1 @@
+Cufon.replace('#superfish-1 a, #superfish-1 a:visited, .flexslider .views-field-view-node a, .view-showcase .views-field-view-node, .view-join-us .views-field-view-node a, .view-services .views-field-view-node a, .view-portfolio .views-row .views-field-view-node a', { fontFamily:'Impact', hover:true});
