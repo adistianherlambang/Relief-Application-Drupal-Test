@@ -1,1 +1,10 @@
 project_folder/
+web/core/
+web/vendor/
+web/sites/*/files/
+web/sites/*/private/
+web/sites/simpletest/
+config/sync/*.yml
+.env
+docker-compose.override.yml
+node_modules/
