@@ -63,11 +63,3 @@ A custom module that:
   ```sh
   docker-compose down && docker-compose up -d
   ```
-
-## 📄 License
-This project is licensed under the **MIT** license. You are free to use it as needed.
-
----
-
-**Happy Coding! 🚀**
-
